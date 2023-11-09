@@ -10,10 +10,10 @@ function App() {
       <NavBar />
       <Banner />
       <RowLatest title='Netflix Originals' url={original} />
-      <RowLatest title='Action' url={action} isSmall />
       <RowLatest title='Romance' url={romance} isSmall />
       <RowLatest title='Horror' url={horror} isSmall />
       <RowLatest title='Comedy' url={comedy} isSmall />
+      <RowLatest title='Action' url={action} isSmall />
     </div>
   );
 }

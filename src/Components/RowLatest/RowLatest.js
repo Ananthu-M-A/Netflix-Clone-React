@@ -20,30 +20,37 @@ function RowLatest(props) {
     width: '100%',
     playerVars: {
       // https://developers.google.com/youtube/player_parameters
-      autoplay: 0,
+      autoplay: 1,
     },
   };
 
-  const playTrailer = (movieId)=>{
+  const playTrailer = (movieId) => {
     console.log(movieId);
-    // axios.get(`movie/${movieId}/videos?api_key=${API_KEY}&language=en-US`).then(response => {
-    //   if(response.data.results.length !== 0){
-    //     setTrailerId(response.data.results);
-    //   }else{
-    //     console.log("Array Empty");
-    //   }
-    // })
+    axios.get(`movie/${movieId}/videos?api_key=${API_KEY}&language=en-US`).then(response => {
+      if (response.data.results.length !== 0) {
+        setTrailerId(response.data.results);
+      } else {
+        console.log("Array Empty");
+      }
+    }).catch(error => {
+      console.error('Error fetching trailer:', error.message);
+    });
   }
+
 
   return (
     <div className='row'>
       <h2>{props.title}</h2>
       <div className='posters'>
-        {rows.map((movie) =>
-          <img onClick={playTrailer(movie.id)} className={props.isSmall ? 'smallPoster' : 'poster'} alt='poster' src={`${imgUrl + movie.backdrop_path}`} />
-        )}
+        {rows.map((movie) => (
+          <div className=''>
+            <img key={movie.id} onClick={() => playTrailer(movie.id)} className={props.isSmall ? 'smallPoster' : 'poster'}
+              alt='poster' src={`${imgUrl + movie.backdrop_path}`} />
+            <p className='movieName'>{movie.title}</p>
+          </div>
+        ))}
       </div>
-      { trailerId && <YouTube videoId={trailerId.key} opts={opts} />}
+      {trailerId && <YouTube videoId={trailerId[0].key} opts={opts} />}
     </div>
   )
 }
