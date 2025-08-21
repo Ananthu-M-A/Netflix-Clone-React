@@ -25,7 +25,7 @@ function RowLatest(props) {
 
   const playTrailer = (movieId) => {
     console.log(movieId);
-    axios.get(`movie/${movieId}/videos?api_key=${process.env.REACT_APP_TMD_API_KEY}&language=en-US`).then(response => {
+    axios.get(`movie/${movieId}/videos?api_key=${import.meta.env.VITE_APP_TMD_API_KEY}&language=en-US`).then(response => {
       if (response.data.results.length !== 0) {
         setTrailerId(response.data.results);
       } else {
@@ -44,7 +44,7 @@ function RowLatest(props) {
         {rows.map((movie) => (
           <div className=''>
             <img key={movie.id} onClick={() => playTrailer(movie.id)} className={props.isSmall ? 'smallPoster' : 'poster'}
-              alt='poster' src={`${process.env.REACT_APP_IMG_URL + movie.backdrop_path}`} />
+              alt='poster' src={`${import.meta.env.VITE_APP_IMG_URL + movie.backdrop_path}`} />
             <p className='movieName'>{movie.title}</p>
           </div>
         ))}
