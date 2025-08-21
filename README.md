@@ -12,10 +12,12 @@ This project is a Netflix clone built to demonstrate ReactJS, API integration, a
 
 - Netflix-like UI
 - Trailer Playback
+- API integration with Axios
+- Responsive design with CSS
 
 ## Tech Stack
 
-- ReactJS
+- ReactJS 
 - CSS
 - Axios
 
