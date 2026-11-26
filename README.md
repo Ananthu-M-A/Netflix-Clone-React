@@ -2,7 +2,7 @@
 
 > A React-based Netflix clone for educational purposes.
 
-![build](https://img.shields.io/badge/build-passing-brightgreen) ![license](https://img.shields.io/badge/license-MIT-blue)
+![license](https://img.shields.io/badge/license-MIT-blue)
 
 ## About
 
@@ -46,4 +46,4 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 
 - GitHub: [Ananthu-M-A](https://github.com/Ananthu-M-A)
 - Portfolio: [https://ananthuma.com](https://ananthuma.com)
-- Email: ananthumapookkad@gmail.com
+- Email: me@ananthuma.com
